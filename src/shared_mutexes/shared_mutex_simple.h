@@ -1,5 +1,5 @@
-#ifndef SHARED_MUTEX_STUPID_H
-#define SHARED_MUTEX_STUPID_H
+#ifndef SHARED_MUTEX_SIMPLE_H
+#define SHARED_MUTEX_SIMPLE_H
 
 #include <cassert>
 #include <condition_variable>
@@ -7,7 +7,7 @@
 
 #include "src/shared_mutexes/shared_mutex_base.h"
 
-class SharedMutexStupid : public SharedMutexBase {
+class SharedMutexSimple : public SharedMutexBase {
  public:
   void Lock() final {
     mutex_.lock();
@@ -29,4 +29,4 @@ class SharedMutexStupid : public SharedMutexBase {
   std::mutex mutex_;
 };
 
-#endif  // SHARED_MUTEX_STUPID_H
+#endif  // SHARED_MUTEX_SIMPLE_H
